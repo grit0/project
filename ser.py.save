@@ -1,0 +1,9 @@
+from socket import *
+server=socket(AF_INET,SOCK_STREAM)
+server.bind(('192.168.1.171',5000))
+server.listen(5)
+while True:
+	print('wait....')
+	client, address=server.accept()
+	print("from : ",address)
+	client.close()
